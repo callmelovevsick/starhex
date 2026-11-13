@@ -1,0 +1,93 @@
+.TH STARHEX 1 "November 2026" "starhex 1.0.0" "User Commands"
+.SH NAME
+starhex \- ultra-fast versatile CLI number base, hex & encoding toolkit for Arch Linux
+.SH SYNOPSIS
+.B starhex
+[\fIINPUT\fR] [\fIOPTIONS\fR]
+.br
+.B echo
+\fIINPUT\fR |
+.B starhex
+[\fIOPTIONS\fR]
+.SH DESCRIPTION
+.B starhex
+is a lightning-fast command-line tool designed for Arch Linux to convert and inspect numbers, strings, binary data, colors, IP addresses, IEEE-754 floats, and Unix timestamps across arbitrary number bases and formats with automatic input detection.
+.SH OPTIONS
+.TP
+.BR \-t \fIBASE\fR
+Target base or format. Examples: \fB\-t2\fR, \fB\-t8\fR, \fB\-t10\fR, \fB\-t16\fR, \fB\-tb\fR, \fB\-to\fR, \fB\-td\fR, \fB\-tx\fR, \fB\-ts\fR, \fB\-tb64\fR, \fB\-trgb\fR, \fB\-tip\fR, \fB\-tfloat\fR, \fB\-tdouble\fR, \fB\-ttime\fR.
+.TP
+.BR \-f \fIBASE\fR
+Force source base or format (e.g. \fB\-f2\fR, \fB\-f16\fR, \fB\-fstr\fR).
+.TP
+.BR \-p ", " \-\-prefix
+Add base prefix (\fB0x\fR, \fB0b\fR, \fB0o\fR, \fB#\fR).
+.TP
+.BR \-np ", " \-\-no\-prefix
+Omit base prefix (default when \-t is specified).
+.TP
+.BR \-u ", " \-\-upper
+Output uppercase hex/alphanumeric digits.
+.TP
+.BR \-l ", " \-\-lower
+Output lowercase hex/alphanumeric digits.
+.TP
+.BR \-w \fIN\fR ", " \-\-width \fIN\fR
+Zero-pad output string to \fIN\fR digits / bit width.
+.TP
+.BR \-g \fIN\fR ", " \-\-group \fIN\fR
+Group output digits into chunks of \fIN\fR separated by spaces.
+.TP
+.BR \-q ", " \-\-quiet
+Output only the converted value without decorative headers.
+.TP
+.BR \-a ", " \-\-all
+Display the multi-base inspection dashboard.
+.TP
+.BR \-c ", " \-\-color
+Force ANSI color output.
+.TP
+.BR \-nc ", " \-\-no\-color
+Disable ANSI color output.
+.TP
+.BR \-e16 ", " \-e32 ", " \-e64
+Swap byte endianness (16-bit, 32-bit, or 64-bit).
+.TP
+.B \-\-not
+Bitwise NOT inversion.
+.TP
+.BR \-\-and \fIVAL\fR
+Bitwise AND with \fIVAL\fR.
+.TP
+.BR \-\-or \fIVAL\fR
+Bitwise OR with \fIVAL\fR.
+.TP
+.BR \-\-xor \fIVAL\fR
+Bitwise XOR with \fIVAL\fR.
+.TP
+.BR \-\-shl \fIN\fR
+Shift left by \fIN\fR bits.
+.TP
+.BR \-\-shr \fIN\fR
+Shift right by \fIN\fR bits.
+.TP
+.BR \-h ", " \-\-help
+Display help message and exit.
+.TP
+.BR \-v ", " \-\-version
+Display version information and exit.
+.SH EXAMPLES
+.TP
+Convert 42 from base 10 to base 2:
+.B starhex 42 -t2
+.TP
+Convert 0x3D from hex to base 10:
+.B starhex 0x3D -t10
+.TP
+Convert with prefix and padding:
+.B starhex 42 -t2 -p -w8 -g4
+.TP
+Inspect multi-base dashboard:
+.B starhex 0x3D
+.SH AUTHOR
+lovevsick

@@ -1,0 +1,27 @@
+#compdef starhex
+
+_arguments \
+    '(-h --help)'{-h,--help}'[Show help message]' \
+    '(-v --version)'{-v,--version}'[Show version information]' \
+    '(-p --prefix)'{-p,--prefix}'[Add base prefix 0x, 0b, 0o, #]' \
+    '(-np --no-prefix)'{-np,--no-prefix}'[Omit prefix]' \
+    '(-u --upper)'{-u,--upper}'[Uppercase digits]' \
+    '(-l --lower)'{-l,--lower}'[Lowercase digits]' \
+    '(-q --quiet)'{-q,--quiet}'[Raw value only]' \
+    '(-a --all)'{-a,--all}'[Show full multi-base dashboard]' \
+    '(-c --color)'{-c,--color}'[Force color output]' \
+    '(-nc --no-color)'{-nc,--no-color}'[Disable color output]' \
+    '-w[Pad output to bit/digit width]:width:' \
+    '-g[Group digits by size]:size:' \
+    '-t[Target base]:base:(2 8 10 16 b o d x hex str b64 rgb hsv ip float double time)' \
+    '-f[Force input base]:base:(2 8 10 16 str b64 ip rgb)' \
+    '-e16[Swap 16-bit endianness]' \
+    '-e32[Swap 32-bit endianness]' \
+    '-e64[Swap 64-bit endianness]' \
+    '--not[Bitwise NOT]' \
+    '--and[Bitwise AND with value]:value:' \
+    '--or[Bitwise OR with value]:value:' \
+    '--xor[Bitwise XOR with value]:value:' \
+    '--shl[Shift left bits]:bits:' \
+    '--shr[Shift right bits]:bits:' \
+    '*:values:'
